@@ -39,6 +39,18 @@ const LineChart = () => {
                   CountsByDate.push(counts)
               })
 
+              const margin = {top: 50, right: 30, bottom: 30, left: 30}
+              const width = parseInt(d3.select('#d3').style('width'))
+              const height = parseInt(d3.select('#d3').style('height'))
+
+              // set up chart
+              const svg = d3.select(d3Chart.current)
+                             .attr('width', width)
+                             .atrr('height', height)
+                             .style('background-color', 'purple')
+                             .append('g')
+                                 .attr('transform', 'translate('+ margin.left + ',', margin.top)
+
               console.log(CountsByDate);
           })
     })
